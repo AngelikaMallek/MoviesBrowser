@@ -21,7 +21,11 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.color.waterloo};
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
     line-height: 150%;
     border: none;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 13px;
+        line-height: 130%;
+    }
 `;

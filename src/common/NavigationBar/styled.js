@@ -11,5 +11,6 @@ export const StyledNavigationBar = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         flex-direction: column;
+        padding: 0 16px;
     }
 `;

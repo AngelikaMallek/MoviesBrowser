@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const StyledNavigation = styled.nav`
-    margin: 0;
     display: flex;
-    flex-direction: row;
+    gap: 80px;
+	width: 100%;
     align-items: center;
-    justify-content: space-between;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+	    justify-content: space-between;
+	    gap: 19px;
+        margin: 16px;
+    };
 `;
 
 export const Button = styled.button`
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 12px;
     background-color: ${({ theme }) => theme.color.woodsmoke};

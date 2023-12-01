@@ -8,10 +8,11 @@ export const Wrapper = styled.div`
     gap: 16px;
     transition: color 0.3s;
     margin: 0;
-    padding: 180px;
+    padding-top: 180px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        gap: 8px
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 8px;
+        padding-top: 20px;
     }
 `;
 
@@ -41,7 +42,7 @@ export const Description = styled.p`
     margin: 0;
     padding: 0;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 15px;
     }
 `;
