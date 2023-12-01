@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const StyledNavigation = styled.div`
+export const StyledNavigation = styled.nav`
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
 `;
 
 export const Button = styled.button`
@@ -25,7 +28,8 @@ export const Title = styled.p`
 `;
 
 export const Links = styled.div`
-
+    display: inline-flex;
+    gap: 16px;
 `;
 
 export const LinkButton = styled.a`
@@ -33,4 +37,7 @@ export const LinkButton = styled.a`
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    border: 1px solid ${({ theme }) => theme.color.white};
+    padding: 14px 24px;
+    border-radius: 24px;
 `;
