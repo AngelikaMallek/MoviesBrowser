@@ -1,8 +1,8 @@
-import NavigatonBar from "../src/common/NavigationBar"
+import NavigationBar from "./common/NavigationBar";
 
 function App() {
   return (
-    <NavigatonBar />
+      <NavigationBar />
   );
 }
 
