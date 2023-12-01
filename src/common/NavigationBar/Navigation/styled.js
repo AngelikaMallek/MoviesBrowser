@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
     display: flex;
@@ -42,14 +43,18 @@ export const Links = styled.div`
     gap: 16px;
 `;
 
-export const LinkButton = styled.a`
+export const LinkButton = styled(NavLink)`
     color: ${({ theme }) => theme.color.white};
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    border: 1px solid ${({ theme }) => theme.color.white};
-    padding: 14px 24px;
-    border-radius: 24px;
+    padding: 8px 24px;
+    text-decoration: none;
+
+    &.active {
+        border: 1px solid ${({ theme }) => theme.color.white};
+        border-radius: 24px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {  
         font-size: 12px;

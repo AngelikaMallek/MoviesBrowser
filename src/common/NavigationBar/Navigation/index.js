@@ -8,8 +8,8 @@ const Navigation = () => (
             <Title>Movies Browser</Title>
         </Button>
         <Links>
-            <LinkButton>Movies</LinkButton>
-            <LinkButton>People</LinkButton>
+            <LinkButton to="/movies">Movies</LinkButton>
+            <LinkButton to="/people">People</LinkButton>
         </Links>
     </StyledNavigation>
 )
