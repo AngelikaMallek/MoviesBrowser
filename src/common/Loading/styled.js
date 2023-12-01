@@ -27,6 +27,5 @@ export const StyledLoading = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 100px;
         height: 100px;
-        border-right: 9px solid ${({ theme }) => theme.color.scienceBlue};
     }
 `;

@@ -10,6 +10,11 @@ export const StyledSearch = styled.div`
     display: flex;
     gap: 16px;
     align-items: center;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-bottom: 16px;
+        width: 100%;
+    }
 `;
 
 export const Input = styled.input`

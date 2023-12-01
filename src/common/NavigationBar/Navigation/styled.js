@@ -5,7 +5,7 @@ export const StyledNavigation = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 80px;
+    justify-content: space-between;
 `;
 
 export const Button = styled.button`
@@ -25,6 +25,12 @@ export const Title = styled.p`
     line-height: 40px;  
     letter-spacing: -1.5px;
     text-transform: capitalize;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 13px;
+        line-height: 130%;
+        letter-spacing: -0.5px;
+    }
 `;
 
 export const Links = styled.div`
@@ -40,4 +46,10 @@ export const LinkButton = styled.a`
     border: 1px solid ${({ theme }) => theme.color.white};
     padding: 14px 24px;
     border-radius: 24px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {  
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px 12px;
+    }
 `;
