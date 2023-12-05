@@ -8,7 +8,7 @@ export const useApiMovieList = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        const fetchApiMovieLis = async () => {
+        const fetchApiMovieList = async () => {
             try {
                 const response = await axios.get(popularMoviesURL)
                 setMovieList(response.data)
@@ -19,7 +19,7 @@ export const useApiMovieList = () => {
             }
         }
 
-        setTimeout(fetchApiMovieLis, 2000);
+        setTimeout(fetchApiMovieList, 2000);
     },[]);
 
     return {movieList, loading, error};

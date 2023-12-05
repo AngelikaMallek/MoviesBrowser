@@ -47,7 +47,7 @@ const MovieList = () => {
             </Container>
         );
     } catch {
-        return "błąd";
+        
     }
 }
 

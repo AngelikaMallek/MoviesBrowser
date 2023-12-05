@@ -12,7 +12,7 @@ const MovieTile = ({id, title, release_date, vote_average, poster_path, vote_cou
         </Year>
         <GenresBar>
             {genres.map((genre) => (
-                <Genres>{genre}</Genres>
+                <Genres key={genre}>{genre}</Genres>
             ))}
         </GenresBar>
         <Wrapper>
