@@ -5,10 +5,12 @@ import MovieTile from "../../common/MovieTile";
 import { MoviesGrid } from "../../common/MovieTile/styled";
 import { Container } from "../../common/Container";
 import { Title } from "./styed";
+import { useGenres } from "../../common/useGenres";
 
 const MovieList = () => {
     
     const {movieList, loading, error} = useApiMovieList();
+    const { genres } = useGenres();
 
     if(loading) {
         return <Loading />
@@ -35,6 +37,10 @@ const MovieList = () => {
                             vote_average={movie.vote_average}
                             poster_path={movie.poster_path}
                             vote_count={movie.vote_count}
+                            genres={movie.genre_ids.map((id) =>
+								genres.genres.find((genre) =>
+									genre.id === id).name
+							)}
                         />
                     )) : ""}
                 </MoviesGrid>

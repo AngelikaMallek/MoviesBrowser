@@ -8,6 +8,9 @@ export const Container = styled(Link)`
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     padding: 16px;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 `;
 
 export const Image = styled.img`
@@ -20,19 +23,29 @@ export const Title = styled.h2`
     font-size: 22px;
     font-weight: 500;
     line-height: 130%;
+    margin: 0;
+    padding: 0;
 `;
 
 export const Year = styled.p`
     color: ${({ theme }) => theme.color.waterloo};
     font-size: 16px;
     line-height: 150%;
+    margin: 0;
+    padding: 0;
 `;
 
-export const Genres = styled.div`
+export const GenresBar = styled.ul`
     display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+`;
+
+export const Genres = styled.li`
+    list-style: none;
     padding: 8px 16px;
-    align-items: center;
-    gap: 10px;
     color: ${({ theme }) => theme.color.woodsmoke};
     font-size: 14px;
     line-height: 140%;
@@ -44,6 +57,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-top: auto
 `;
 
 export const Rates = styled.p`
