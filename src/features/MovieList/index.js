@@ -29,6 +29,7 @@ const MovieList = () => {
                     {repos ? repos.map((repository) => (
                         <MovieTile 
                             key={repository.id} 
+                            id={repository.id}
                             title={repository.title}
                             release_date={repository.release_date}
                             vote_average={repository.vote_average}

@@ -1,8 +1,8 @@
 import { Container, Image, Title, Year, Genres,Wrapper, Rates, Votes } from "./styled";
 import { ReactComponent as Star } from "./star.svg";
 
-const MovieTile = ({title, release_date, vote_average, poster_path, vote_count}) => (
-    <Container>
+const MovieTile = ({id, title, release_date, vote_average, poster_path, vote_count}) => (
+    <Container to={`/movies/${id}`}>
         <Image src={"https://image.tmdb.org/t/p/w342/" + poster_path} alt="poster"></Image>
         <Title>{title ? title : "Unknown Title"}</Title>
         <Year>
