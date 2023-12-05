@@ -1,5 +1,5 @@
+import axios from 'axios';
 import { useState, useEffect } from "react";
-import { fetchAPI } from "../../common/API/fetchAPI";
 import { URL, key } from "../../common/API/APIData";
 
 export const usePopularMovie = (movieId) => {
@@ -9,18 +9,19 @@ export const usePopularMovie = (movieId) => {
 	const fetchingURL = `${URL}/movie/${movieId}?api_key=${key}&language=en-US&`
 
 	useEffect(() => {
-		const getPopularMovie = async () => {
-			try {
-				const response = await fetchAPI(fetchingURL);
-				setPopularMovie(response);
-				setLoading(false);
-			} catch (error) {
-				setError("Error while fetching the data")
-				setLoading(false);
-			}
-		};
-		getPopularMovie();
-	}, [movieId]);
+        const fetchPopularMovie = async () => {
+            try {
+                const response = await axios.get(fetchingURL)
+                setPopularMovie(response.data)
+                setLoading(false);
+            } catch {
+                setError(true);
+                setLoading(false);
+            }
+    }
+
+        setTimeout(fetchPopularMovie, 2000);
+    },[]);
 
 	return { popularMovie, loading, error };
 };

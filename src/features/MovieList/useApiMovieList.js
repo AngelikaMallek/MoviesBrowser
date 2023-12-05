@@ -1,18 +1,17 @@
+import axios from 'axios';
 import { useState, useEffect } from "react";
-import axios from 'axios'
+import { popularMoviesURL } from "../../common/API/APIData";
 
-const URL = "https://api.themoviedb.org/3/movie/popular?api_key=7027d867fdeb289f18a3c6278583d82d&language=en-US";
-
-export const useRepositories = () => {
-    const [repositories, setRepositories] = useState([]);
+export const useApiMovieList = () => {
+    const [movieList, setMovieList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        const fetchRepositories = async () => {
+        const fetchApiMovieLis = async () => {
             try {
-                const response = await axios.get(URL)
-                setRepositories(response.data)
+                const response = await axios.get(popularMoviesURL)
+                setMovieList(response.data)
                 setLoading(false);
             } catch {
                 setError(true);
@@ -20,10 +19,10 @@ export const useRepositories = () => {
             }
         }
 
-        setTimeout(fetchRepositories, 2000);
+        setTimeout(fetchApiMovieLis, 2000);
     },[]);
 
-    return {repositories, loading, error};
+    return {movieList, loading, error};
 }
 
 

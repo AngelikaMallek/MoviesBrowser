@@ -6,6 +6,7 @@ import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import { useParams } from "react-router-dom";
 import { useCredits } from "./useCredits";
+import { MoviesGrid } from "../../common/MovieTile/styled";
 
 const Movie = () => {
     const { id } = useParams();
@@ -45,7 +46,6 @@ const Movie = () => {
                         votes={popularMovie.vote_count}
                         overview={popularMovie.overview}
                     />
-                    <Title>Cast</Title>
                 </Container>
             </MovieWrapper>
         )

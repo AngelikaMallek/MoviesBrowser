@@ -16,6 +16,7 @@ import {
 } from "./styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
+import { ReactComponent as Star } from "./star.svg";
 
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
@@ -63,6 +64,7 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
                 <Stats>
                     {votes ? (
                         <>
+                            <Star />
                             <Rating>{rating ? rating.toFixed(1).replace(".", ",") : "0"}</Rating>
                             <RatingMax>/ 10</RatingMax>
                             <Votes>{formatNumber(votes) + " votes"}</Votes>

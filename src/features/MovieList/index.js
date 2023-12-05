@@ -1,4 +1,4 @@
-import { useRepositories } from "./useApiMovieList";
+import { useApiMovieList } from "./useApiMovieList";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import MovieTile from "../../common/MovieTile";
@@ -8,7 +8,7 @@ import { Title } from "./styed";
 
 const MovieList = () => {
     
-    const {repositories, loading, error} = useRepositories();
+    const {movieList, loading, error} = useApiMovieList();
 
     if(loading) {
         return <Loading />
@@ -20,21 +20,21 @@ const MovieList = () => {
 
     try {
 
-        const repos = repositories.results;
+        const movies = movieList.results;
 
         return (
             <Container>
                 <Title>Popular movies</Title>
                 <MoviesGrid>
-                    {repos ? repos.map((repository) => (
+                    {movies ? movies.map((movie) => (
                         <MovieTile 
-                            key={repository.id} 
-                            id={repository.id}
-                            title={repository.title}
-                            release_date={repository.release_date}
-                            vote_average={repository.vote_average}
-                            poster_path={repository.poster_path}
-                            vote_count={repository.vote_count}
+                            key={movie.id} 
+                            id={movie.id}
+                            title={movie.title}
+                            release_date={movie.release_date}
+                            vote_average={movie.vote_average}
+                            poster_path={movie.poster_path}
+                            vote_count={movie.vote_count}
                         />
                     )) : ""}
                 </MoviesGrid>

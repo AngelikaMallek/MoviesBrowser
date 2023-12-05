@@ -1,5 +1,5 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
-import { fetchAPI } from "../../common/API/fetchAPI";
 import { URL, key } from "../../common/API/APIData";
 
 export const useCredits = (movieId) => {
@@ -7,16 +7,18 @@ export const useCredits = (movieId) => {
 	const fetchingURL = `${URL}/movie/${movieId}/credits?api_key=${key}&language=en-US&`
 
 	useEffect(() => {
-		const getCredits = async () => {
-			try {
-				const response = await fetchAPI(fetchingURL);
-				setCredits(response);
-			} catch {
-				console.error("Error while fetching credits data");
-			}
-		};
-		getCredits();
-	}, [movieId]);
+        const fetchCredits = async () => {
+            try {
+                const response = await axios.get(fetchingURL)
+                setCredits(response.data)
+            } catch {
+                
+            }
+    }
+
+        setTimeout(fetchCredits, 2000);
+    },[movieId]);
+
 
 	return { credits };
 };
