@@ -1,6 +1,10 @@
 import { useApiPeopleList } from "./useApiPeopleList";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
+import PersonTile from "../../common/PersonTile";
+import { PeopleGrid } from "../../common/PersonTile/styled";
+import { Container } from "../../common/Container";
+import { Title } from "./styled";
 
 const PeopleList = () => {
 
@@ -19,11 +23,18 @@ const PeopleList = () => {
         const people = peopleList.results;
     
             return (
-                <ul>
-                    {people ? people.map((person) => (
-                        <li key={person.id}>{person.name}</li>
-                    )) : ""}
-                </ul>
+                <Container>
+                    <Title>Popular people</Title>
+                    <PeopleGrid>
+                        {people ? people.map((person) => (
+                            <PersonTile 
+                                key={person.id} 
+                                name={person.name}
+                                profile_path={person.profile_path}
+                            />
+                        )) : ""}
+                    </PeopleGrid>
+                </Container>
             );
         } catch {
         
