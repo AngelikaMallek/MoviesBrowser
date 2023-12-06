@@ -29,6 +29,7 @@ const PeopleList = () => {
                         {people ? people.map((person) => (
                             <PersonTile 
                                 key={person.id} 
+                                id={person.id}
                                 name={person.name}
                                 profile_path={person.profile_path}
                             />
