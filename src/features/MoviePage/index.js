@@ -7,6 +7,8 @@ import Error from "../../common/Error";
 import { useParams } from "react-router-dom";
 import { useCredits } from "./useCredits";
 import { MoviesGrid } from "../../common/MovieTile/styled";
+import PersonTile from "../../common/PersonTile";
+import { PeopleGrid } from "../../common/PersonTile/styled";
 
 const Movie = () => {
     const { id } = useParams();
@@ -46,6 +48,34 @@ const Movie = () => {
                         votes={popularMovie.vote_count}
                         overview={popularMovie.overview}
                     />
+                    <Title>Cast</Title>
+                    <MoviesGrid>
+                        <PeopleGrid>
+                            {cast.map((castPerson) => (
+                                <PersonTile
+                                    key={castPerson.id}
+                                    id={castPerson.id}
+                                    poster={castPerson.profile_path}
+                                    name={castPerson.name}
+                                    character={castPerson.character}
+                                />
+                            ))}
+                        </PeopleGrid>
+                    </MoviesGrid>
+                    <Title>Crew</Title>
+                    <MoviesGrid>
+                        <PeopleGrid>
+                            {crew.map((crewPerson) => (
+                                <PersonTile
+                                    key={crewPerson.credit_id}
+                                    id={crewPerson.id}
+                                    profile_path={crewPerson.profile_path}
+                                    name={crewPerson.name}
+                                    character={crewPerson.job}
+                                />
+                            ))}
+                        </PeopleGrid>
+                    </MoviesGrid>
                 </Container>
             </MovieWrapper>
         )

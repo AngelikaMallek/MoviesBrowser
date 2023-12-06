@@ -32,3 +32,11 @@ export const PeopleGrid = styled.div`
   	grid-gap: 24px;
   	grid-template-columns: repeat(6, 1fr);
 `;
+
+export const Character = styled.p`
+    color: ${({ theme }) => theme.color.waterloo};
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+`;
