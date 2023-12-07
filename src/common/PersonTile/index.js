@@ -1,11 +1,14 @@
-import { Container, Image, Paragraph, Character } from "./styled";
+import { Container, Image, Paragraph, Character, NoPhoto } from "./styled";
 import { imageURL } from "../API/APIData";
 
-const PersonTile = ({ id, name, profile_path, character }) => (
+const PersonTile = ({ id, name, poster, character }) => (
     <Container to={`/people/${id}`}>
-        <Image src={imageURL + "/w342/" + profile_path} />
-        <Paragraph>{name}</Paragraph>
-        <Character>{character}</Character>
+        {
+            poster ? <Image src={imageURL + "/w342/" + poster} />
+            : <NoPhoto />
+        }
+        <Paragraph>{name ? name : "Unknown Name"}</Paragraph>
+        <Character>{character ? character : ""}</Character>
     </Container>
 )
 

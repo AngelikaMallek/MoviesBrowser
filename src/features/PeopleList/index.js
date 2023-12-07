@@ -31,7 +31,7 @@ const PeopleList = () => {
                                 key={person.id} 
                                 id={person.id}
                                 name={person.name}
-                                profile_path={person.profile_path}
+                                poster={person.profile_path}
                             />
                         )) : ""}
                     </PeopleGrid>
