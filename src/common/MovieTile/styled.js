@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import noPoster from "./noPoster.svg";
+import { ReactComponent as Star } from "./star.svg";
 
 export const Container = styled(Link)`
     max-width: 324px;
@@ -11,12 +12,19 @@ export const Container = styled(Link)`
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         flex-direction: row;
         max-width: 288px;
     }
+`;
+
+export const WrapperDetalist = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
 `;
 
 export const Image = styled.img`
@@ -54,6 +62,7 @@ export const Title = styled.h2`
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         font-size: 16px;
+        margin: 0;
     }
 `;
 
@@ -90,6 +99,7 @@ export const Genres = styled.li`
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         font-size: 10px;
         line-height: 110%;
+        padding: 4px 8px;
     }
 `;
 
@@ -98,6 +108,10 @@ export const Wrapper = styled.div`
     align-items: center;
     gap: 12px;
     margin-top: auto;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        margin-top: 0;
+    }
 `;
 
 export const Rates = styled.p`
@@ -105,6 +119,12 @@ export const Rates = styled.p`
     font-size: 16px;
     font-weight: 600;
     line-height: 150%;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 130%;
+    }
 `;
 
 export const Votes = styled.p`
@@ -112,6 +132,11 @@ export const Votes = styled.p`
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 13px;
+        line-height: 130%;
+    }
 `;
 
 export const MoviesGrid = styled.div`
@@ -120,5 +145,10 @@ export const MoviesGrid = styled.div`
   	grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
 `;
 
-export const WrapperDetalist = styled.div`
-`;
+export const StarStyle = styled(Star)`
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        width: 16px;
+        height: 16px;
+    }
+`
+

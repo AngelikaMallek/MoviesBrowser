@@ -8,4 +8,9 @@ export const Title = styled.h1`
     padding: 0;
     margin: 0;
     padding-top: 54px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 18px;
+        line-height: 120%;
+    }
 `;

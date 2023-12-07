@@ -1,5 +1,4 @@
-import { Container, Image, Title, Year, GenresBar, Genres,Wrapper, Rates, Votes, NoPoster, WrapperDetalist } from "./styled";
-import { ReactComponent as Star } from "./star.svg";
+import { Container, Image, Title, Year, GenresBar, Genres,Wrapper, Rates, Votes, NoPoster, WrapperDetalist, StarStyle } from "./styled";
 import { imageURL } from "../API/APIData";
 
 const MovieTile = ({id, title, date, vote, poster, voteCount, genres}) => (
@@ -21,8 +20,8 @@ const MovieTile = ({id, title, date, vote, poster, voteCount, genres}) => (
                 )) : ""}
             </GenresBar>
             <Wrapper>
-                <Star />
-                <Rates>{vote ? vote : "No votes"}</Rates>
+                <StarStyle />
+                <Rates>{vote ? vote.toFixed(1) : "No votes"}</Rates>
                 <Votes>{voteCount ? voteCount + " votes" : "No votes"}</Votes>
             </Wrapper>
         </WrapperDetalist>
