@@ -33,10 +33,10 @@ const MovieList = () => {
                             key={movie.id} 
                             id={movie.id}
                             title={movie.title}
-                            release_date={movie.release_date}
-                            vote_average={movie.vote_average}
-                            poster_path={movie.poster_path}
-                            vote_count={movie.vote_count}
+                            date={movie.release_date}
+                            vote={movie.vote_average}
+                            poster={movie.poster_path}
+                            voteCount={movie.vote_count}
                             genres={movie.genre_ids.map((id) =>
 								genres.genres.find((genre) =>
 									genre.id === id).name

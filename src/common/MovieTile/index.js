@@ -1,25 +1,28 @@
-import { Container, Image, Title, Year, GenresBar, Genres,Wrapper, Rates, Votes } from "./styled";
+import { Container, Image, Title, Year, GenresBar, Genres,Wrapper, Rates, Votes, NoPoster } from "./styled";
 import { ReactComponent as Star } from "./star.svg";
 import { imageURL } from "../API/APIData";
 
-const MovieTile = ({id, title, release_date, vote_average, poster_path, vote_count, genres}) => (
+const MovieTile = ({id, title, date, vote, poster, voteCount, genres}) => (
     <Container to={`/movies/${id}`}>
-        <Image src={imageURL + "/w342/" + poster_path} alt="poster"></Image>
+        {
+            poster ? <Image src={imageURL + "/w342/" + poster} alt="poster" />
+            : <NoPoster />
+        }
         <Title>{title ? title : "Unknown Title"}</Title>
         <Year>
-            {release_date ? new Date(release_date).toLocaleDateString(undefined, {
+            {date ? new Date(date).toLocaleDateString(undefined, {
                 year: 'numeric',
             }) : "Unknown"}
         </Year>
         <GenresBar>
-            {genres.map((genre) => (
+            {genres ? genres.map((genre) => (
                 <Genres key={genre}>{genre}</Genres>
-            ))}
+            )) : ""}
         </GenresBar>
         <Wrapper>
             <Star />
-            <Rates>{vote_average ? vote_average : "No votes"}</Rates>
-            <Votes>{vote_count ? vote_count + " votes" : "No votes"}</Votes>
+            <Rates>{vote ? vote : "No votes"}</Rates>
+            <Votes>{voteCount ? voteCount + " votes" : "No votes"}</Votes>
         </Wrapper>
     </Container>
 );
