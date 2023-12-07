@@ -143,6 +143,10 @@ export const MoviesGrid = styled.div`
   	display: grid;
     gap: 24px;
   	grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        gap: 12px;
+    }
 `;
 
 export const StarStyle = styled(Star)`
