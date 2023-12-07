@@ -11,11 +11,11 @@ const PersonPage = () => {
     const { popularPerson, loading, error } = usePopularPerson(personId);
 
     if(loading) {
-        <Loading />
+        return <Loading />
     }
 
     if(error) {
-        <Error />
+        return <Error />
     }
 
     try {

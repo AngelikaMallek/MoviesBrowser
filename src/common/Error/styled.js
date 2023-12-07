@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -47,7 +48,7 @@ export const Description = styled.p`
     }
 `;
 
-export const Button = styled.div`
+export const Button = styled(Link)`
     display: inline-flex;
     padding: 12px 16px;
     justify-content: center;
@@ -57,4 +58,5 @@ export const Button = styled.div`
     border: 1px solid var(--semi-grey, rgba(209, 213, 218, 0.10));
     background: ${({ theme }) => theme.color.scienceBlue};
     color: ${({ theme }) => theme.color.white};
+    text-decoration: none;
 `;

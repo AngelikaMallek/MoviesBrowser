@@ -5,7 +5,7 @@ const Navigation = () => (
     <StyledNavigation>
         <Button>
             <Icon />
-            <Title>Movies Browser</Title>
+            <Title to="/movies">Movies Browser</Title>
         </Button>
         <Links>
             <LinkButton to="/movies">Movies</LinkButton>

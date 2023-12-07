@@ -6,7 +6,7 @@ const Error = () => (
         <Icon />
         <Paragraph>Ooops! Something went wrong... </Paragraph>
         <Description>Please check your network connection <br /> and try again</Description>
-        <Button>Back to home page</Button>
+        <Button to="/movies">Back to home page</Button>
     </Wrapper>
 )
 

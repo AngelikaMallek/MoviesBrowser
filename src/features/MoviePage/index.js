@@ -69,7 +69,7 @@ const Movie = () => {
                                 <PersonTile
                                     key={crewPerson.credit_id}
                                     id={crewPerson.id}
-                                    profile_path={crewPerson.profile_path}
+                                    poster={crewPerson.profile_path}
                                     name={crewPerson.name}
                                     character={crewPerson.job}
                                 />
