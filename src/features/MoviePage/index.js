@@ -6,7 +6,6 @@ import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import { useParams } from "react-router-dom";
 import { useCredits } from "./useCredits";
-import { MoviesGrid } from "../../common/MovieTile/styled";
 import PersonTile from "../../common/PersonTile";
 import { PeopleGrid } from "../../common/PersonTile/styled";
 
@@ -49,33 +48,29 @@ const Movie = () => {
                         overview={popularMovie.overview}
                     />
                     <Title>Cast</Title>
-                    <MoviesGrid>
-                        <PeopleGrid>
-                            {cast.map((castPerson) => (
-                                <PersonTile
-                                    key={castPerson.id}
-                                    id={castPerson.id}
-                                    poster={castPerson.profile_path}
-                                    name={castPerson.name}
-                                    character={castPerson.character}
-                                />
-                            ))}
-                        </PeopleGrid>
-                    </MoviesGrid>
+                    <PeopleGrid>
+                        {cast.map((castPerson) => (
+                            <PersonTile
+                                key={castPerson.id}
+                                id={castPerson.id}
+                                poster={castPerson.profile_path}
+                                name={castPerson.name}
+                                character={castPerson.character}
+                            />
+                        ))}
+                    </PeopleGrid>
                     <Title>Crew</Title>
-                    <MoviesGrid>
-                        <PeopleGrid>
-                            {crew.map((crewPerson) => (
-                                <PersonTile
-                                    key={crewPerson.credit_id}
-                                    id={crewPerson.id}
-                                    poster={crewPerson.profile_path}
-                                    name={crewPerson.name}
-                                    character={crewPerson.job}
-                                />
-                            ))}
+                    <PeopleGrid>
+                        {crew.map((crewPerson) => (
+                            <PersonTile
+                                key={crewPerson.credit_id}
+                                id={crewPerson.id}
+                                poster={crewPerson.profile_path}
+                                name={crewPerson.name}
+                                character={crewPerson.job}
+                            />
+                        ))}
                         </PeopleGrid>
-                    </MoviesGrid>
                 </Container>
             </MovieWrapper>
         )

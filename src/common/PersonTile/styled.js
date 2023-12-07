@@ -40,7 +40,7 @@ export const NoPhoto = styled.div`
 `;
 
 export const PeopleGrid = styled.div`
-      	display: grid;
+    display: grid;
     gap: 24px;
   	grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
 `;
