@@ -15,7 +15,7 @@ export const Container = styled(Link)`
 `;
 
 export const Image = styled.img`
-    width: 292px;
+    width: auto;
     height: 434px;
 `;
 
@@ -87,20 +87,6 @@ export const Votes = styled.p`
 
 export const MoviesGrid = styled.div`
   	display: grid;
-  	grid-gap: 24px;
-  	grid-template-columns: repeat(4, 1fr);
-
-  	@media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    	grid-template-columns: repeat(3, 1fr);
-  	};
-
-  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    	grid-template-columns: repeat(2, 1fr);
-  	};
-
-  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    	display: flex;
-    	flex-direction: column;
-    	gap: 16px;
-  	};
+    gap: 24px;
+  	grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
 `;

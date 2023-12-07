@@ -39,9 +39,9 @@ export const NoPhoto = styled.div`
 `;
 
 export const PeopleGrid = styled.div`
-    display: grid;
-  	grid-gap: 24px;
-  	grid-template-columns: repeat(6, 1fr);
+      	display: grid;
+    gap: 24px;
+  	grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
 `;
 
 export const Character = styled.span`
