@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import noPhoto from "./noPhoto.svg";
 
 export const Container = styled(Link)`
     text-decoration: none;
@@ -27,13 +28,23 @@ export const Image = styled.img`
     height: 264px;
 `;
 
+export const NoPhoto = styled.div`
+    width: 177px;
+    height: 264px;
+    background-color: ${({ theme }) => theme.color.silver};
+    background-image: url("${noPhoto}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+`;
+
 export const PeopleGrid = styled.div`
     display: grid;
   	grid-gap: 24px;
   	grid-template-columns: repeat(6, 1fr);
 `;
 
-export const Character = styled.p`
+export const Character = styled.span`
     color: ${({ theme }) => theme.color.waterloo};
     text-align: center;
     font-size: 18px;
