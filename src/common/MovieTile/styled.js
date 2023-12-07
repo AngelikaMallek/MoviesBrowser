@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import noPoster from "./noPoster.svg";
 
 export const Container = styled(Link)`
     max-width: 324px;
@@ -16,6 +17,16 @@ export const Container = styled(Link)`
 export const Image = styled.img`
     width: 292px;
     height: 434px;
+`;
+
+export const NoPoster = styled.div`
+    width: 292px;
+    height: 434px;
+    background-color: ${({ theme }) => theme.color.silver};
+    background-image: url("${noPoster}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
 `;
 
 export const Title = styled.h2`
