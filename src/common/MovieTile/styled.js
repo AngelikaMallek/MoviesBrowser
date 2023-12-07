@@ -12,21 +12,35 @@ export const Container = styled(Link)`
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        flex-direction: row;
+        max-width: 288px;
+    }
 `;
 
 export const Image = styled.img`
     width: auto;
-    height: 434px;
+    max-height: 434px;
+    border-radius: 5px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        max-height: 169px;
+    }
 `;
 
 export const NoPoster = styled.div`
-    width: 292px;
-    height: 434px;
+    width: auto;
+    max-height: 434px;
     background-color: ${({ theme }) => theme.color.silver};
     background-image: url("${noPoster}");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        max-height: 169px;
+    }
 `;
 
 export const Title = styled.h2`
@@ -35,7 +49,12 @@ export const Title = styled.h2`
     font-weight: 500;
     line-height: 130%;
     margin: 0;
+    margin-top: 8px;
     padding: 0;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 16px;
+    }
 `;
 
 export const Year = styled.p`
@@ -44,6 +63,11 @@ export const Year = styled.p`
     line-height: 150%;
     margin: 0;
     padding: 0;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 13px;
+        line-height: 130%;
+    }
 `;
 
 export const GenresBar = styled.ul`
@@ -62,6 +86,11 @@ export const Genres = styled.li`
     line-height: 140%;
     border-radius: 5px;
     background: ${({ theme }) => theme.color.mystic};
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 10px;
+        line-height: 110%;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -89,4 +118,7 @@ export const MoviesGrid = styled.div`
   	display: grid;
     gap: 24px;
   	grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+`;
+
+export const WrapperDetalist = styled.div`
 `;

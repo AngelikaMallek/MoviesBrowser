@@ -26,6 +26,7 @@ export const Paragraph = styled.p`
 export const Image = styled.img`
     width: 177px;
     height: 264px;
+    border-radius: 5px;
 `;
 
 export const NoPhoto = styled.div`
