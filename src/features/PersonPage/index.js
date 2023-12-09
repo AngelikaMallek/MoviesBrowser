@@ -3,12 +3,15 @@ import { usePopularPerson } from "./usePopularPerson";
 import PersonTileDetalis from "./PersonTileDetalis";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
+import {useCredits} from "./useCredits";
 
 const PersonPage = () => {
     const { id } = useParams();
     const personId = id;
 
     const { popularPerson, loading, error } = usePopularPerson(personId);
+
+    const { credits } = useCredits(personId);
 
     if(loading) {
         return <Loading />
@@ -28,6 +31,7 @@ const PersonPage = () => {
                 birthPlace={popularPerson.place_of_birth}
                 description={popularPerson.biography}
             />
+
         )
     } catch {
         return "";

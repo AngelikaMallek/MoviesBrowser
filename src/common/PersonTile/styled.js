@@ -34,11 +34,7 @@ export const Paragraph = styled.p`
 
 export const Image = styled.img`
     max-height: 264px;
-    border-radius: 5px;
-
-    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
-        max-height: 178px;
-    }
+    border-radius: 5px; 
 `;
 
 export const NoPhoto = styled.div`
