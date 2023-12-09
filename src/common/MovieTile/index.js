@@ -4,7 +4,7 @@ import { imageURL } from "../API/APIData";
 const MovieTile = ({id, title, date, vote, poster, voteCount, genres}) => (
     <Container to={`/movies/${id}`}>
         {
-            poster ? <Image src={imageURL + "/w342/" + poster} alt="poster" />
+            poster ? <Image src={imageURL + "/w342/" + poster} alt={"poster"} />
             : <NoPoster />
         }
         <WrapperDetalist>

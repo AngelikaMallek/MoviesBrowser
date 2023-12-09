@@ -37,7 +37,7 @@ export const Image = styled.img`
 
 export const NoPoster = styled.div`
     width: auto;
-    max-height: 434px;
+    height: 434px;
     background-color: ${({ theme }) => theme.color.silver};
     background-image: url("${noPoster}");
     background-repeat: no-repeat;
@@ -45,7 +45,8 @@ export const NoPoster = styled.div`
     background-size: 100px;
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
-        max-height: 169px;
+        height: 169px;
+        width: auto;
     }
 `;
 
