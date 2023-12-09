@@ -4,7 +4,7 @@ import noPoster from "./noPoster.svg";
 import { ReactComponent as Star } from "./star.svg";
 
 export const Container = styled(Link)`
-    max-width: 324px;
+
     border-radius: 5px;
     background: ${({ theme }) => theme.color.white};
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
@@ -16,7 +16,6 @@ export const Container = styled(Link)`
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         flex-direction: row;
-        max-width: 288px;
     }
 `;
 

@@ -9,14 +9,12 @@ export const Container = styled(Link)`
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    max-width: 208px;
     background-color: ${({ theme }) => theme.color.white};
 	border-radius: 5px;
 	box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         gap: 8px;
-        max-width: 136px;
     }
 `;
 
@@ -35,12 +33,11 @@ export const Paragraph = styled.p`
 `;
 
 export const Image = styled.img`
-    max-width: 177px;
-    height: auto;
+    max-height: 264px;
     border-radius: 5px;
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
-        max-width: 120px;
+        max-height: 178px;
     }
 `;
 
