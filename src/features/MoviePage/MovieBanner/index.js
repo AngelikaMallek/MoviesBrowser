@@ -8,7 +8,7 @@ const MovieBanner = ({ banner, title, rating, votes }) => (
                 <Title>{title ? title : "Unknown"}</Title>
                 <RatesWrapper>
                     <StyledStar />
-                    <Rates>{rating ? rating : "0"}</Rates>
+                    <Rates>{rating ? rating.toFixed(1) : "0"}</Rates>
                     <MaxRates>/10</MaxRates>
                 </RatesWrapper>
                 <Votes>{votes ? votes : "0"} votes</Votes>
