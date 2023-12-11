@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNavigationBar = styled.div`
-    background-color: ${({ theme }) => theme.color.woodsmoke};
+    background-color: ${({ theme }) => theme.color.black};
     width: 100%;
     margin: 0;
     padding: 0 52px;

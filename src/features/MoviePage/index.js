@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useCredits } from "./useCredits";
 import PersonTile from "../../common/PersonTile";
 import { PeopleGrid } from "../../common/PersonTile/styled";
+import Banner from "./MovieBanner";
 
 const Movie = () => {
     const { id } = useParams();
@@ -30,6 +31,13 @@ const Movie = () => {
 
         return (
             <MovieWrapper>
+                <Banner 
+                    key={popularMovie.id}
+                    banner={popularMovie.backdrop_path}
+                    title={popularMovie.title}
+                    rating={popularMovie.vote_average}
+                    votes={popularMovie.vote_count}
+                />
                 <Container>
                     <MovieTileDetails
                         key={popularMovie.id}

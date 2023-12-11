@@ -20,7 +20,7 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: ${({ theme }) => theme.color.woodsmoke};
+    background-color: ${({ theme }) => theme.color.black};
     border: none;
 `;
 
