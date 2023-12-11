@@ -6,6 +6,7 @@ import { MoviesGrid } from "../../common/MovieTile/styled";
 import { Container } from "../../common/Container";
 import { Title } from "./styed";
 import { useGenres } from "../../common/useGenres";
+import Pagination from "../../common/Pagiation";
 
 const MovieList = () => {
     
@@ -44,6 +45,7 @@ const MovieList = () => {
                         />
                     )) : ""}
                 </MoviesGrid>
+                <Pagination />
             </Container>
         );
     } catch {

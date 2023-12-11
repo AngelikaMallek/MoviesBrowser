@@ -5,6 +5,7 @@ import PersonTile from "../../common/PersonTile";
 import { PeopleGrid } from "../../common/PersonTile/styled";
 import { Container } from "../../common/Container";
 import { Title } from "./styled";
+import Pagination from "../../common/Pagiation";
 
 const PeopleList = () => {
 
@@ -35,6 +36,7 @@ const PeopleList = () => {
                             />
                         )) : ""}
                     </PeopleGrid>
+                    <Pagination />
                 </Container>
             );
         } catch {
