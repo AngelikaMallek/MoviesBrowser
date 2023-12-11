@@ -8,7 +8,7 @@ export const Container = styled.div`
     gap: 40px;
     background: ${({ theme }) => theme.color.white};
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
-
+    margin-top: 50px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         display: flex;

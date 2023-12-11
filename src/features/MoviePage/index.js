@@ -31,13 +31,17 @@ const Movie = () => {
 
         return (
             <MovieWrapper>
-                <Banner 
-                    key={popularMovie.id}
-                    banner={popularMovie.backdrop_path}
-                    title={popularMovie.title}
-                    rating={popularMovie.vote_average}
-                    votes={popularMovie.vote_count}
-                />
+                {popularMovie.backdrop_path 
+                ?
+                    <Banner 
+                        key={popularMovie.id}
+                        banner={popularMovie.backdrop_path}
+                        title={popularMovie.title}
+                        rating={popularMovie.vote_average}
+                        votes={popularMovie.vote_count}
+                    />
+                : ""
+                }
                 <Container>
                     <MovieTileDetails
                         key={popularMovie.id}

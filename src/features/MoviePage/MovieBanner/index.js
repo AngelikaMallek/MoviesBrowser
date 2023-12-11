@@ -5,13 +5,13 @@ const MovieBanner = ({ banner, title, rating, votes }) => (
     <Wrapper>
         <Banner url={imageURL + "w1280" + banner}>
             <Vignette>
-                <Title>{title}</Title>
+                <Title>{title ? title : "Unknown"}</Title>
                 <RatesWrapper>
                     <StyledStar />
-                    <Rates>{rating}</Rates>
+                    <Rates>{rating ? rating : "0"}</Rates>
                     <MaxRates>/10</MaxRates>
                 </RatesWrapper>
-                <Votes>{votes} votes</Votes>
+                <Votes>{votes ? votes : "0"} votes</Votes>
             </Vignette>
         </Banner>
     </Wrapper>

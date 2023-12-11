@@ -5,7 +5,6 @@ import { ReactComponent as Star } from "../../../common/MovieTile/star.svg";
 export const Wrapper = styled.div` 
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
     background-color: ${({ theme }) => theme.color.black};
 `;
 
