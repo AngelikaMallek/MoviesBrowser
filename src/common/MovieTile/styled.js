@@ -26,7 +26,6 @@ export const WrapperDetalist = styled.div`
 
 export const Image = styled.img`
     width: auto;
-    max-height: 434px;
     border-radius: 5px;
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {

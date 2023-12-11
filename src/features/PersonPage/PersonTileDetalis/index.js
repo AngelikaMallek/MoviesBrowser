@@ -10,7 +10,6 @@ import {
 } from "./styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
-import { NoPhoto } from "../../../common/Placeholders";
 import noPhoto from "../../../common/Placeholders/noPhoto.svg";
 const PersonTileDetalis = ({ poster, name, birthDate, birthPlace, description }) => {
 
@@ -32,7 +31,7 @@ const PersonTileDetalis = ({ poster, name, birthDate, birthPlace, description })
         <PersonTileContainer>
             {poster
                 ? <Image src={imageURL + "w500" + poster} alt="Famous person" />
-                : <NoPhoto src={noPhoto} alt="Famous person"/>
+                : <Image src={noPhoto} alt="Famous person"/>
             }
             <PersonDataContainer>
                 <Name>{name ? name : "Unknown name"}</Name>

@@ -17,7 +17,6 @@ import {
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
 import { ReactComponent as Star } from "./star.svg";
-import { NoPoster } from "../../../common/Placeholders";
 import noPoster from "../../../common/Placeholders/noPoster.svg";
 
 function formatNumber(number) {
@@ -42,7 +41,7 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
         <Container>
             {poster
                 ? <Poster src={imageURL + "w342" + poster} alt="Poster" />
-                : <NoPoster src={noPoster} alt="Poster"/>
+                : <Poster src={noPoster} alt="Poster"/>
             }
             <MovieDataContainer>
                 <Title>{title ? title : "Unknown title"}</Title>
