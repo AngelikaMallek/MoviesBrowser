@@ -11,8 +11,8 @@ export const StyledNavigation = styled.nav`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 	    justify-content: space-between;
-	    gap: 19px;
-        margin: 16px;
+	    gap: 5px;
+        padding: 16px;
     };
 `;
 
@@ -22,6 +22,10 @@ export const Button = styled.button`
     gap: 12px;
     background-color: ${({ theme }) => theme.color.black};
     border: none;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+	    gap: 5px;
+    };
 `;
 
 export const Title = styled(Link)`
