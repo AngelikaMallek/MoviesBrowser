@@ -1,4 +1,4 @@
-import { ReactComponent as Icon } from "./icon.svg";
+import { ReactComponent as Icon } from "../../../images/navIcon.svg";
 import { StyledNavigation, Title, Button, Links, LinkButton } from "./styled";
 
 const Navigation = () => (

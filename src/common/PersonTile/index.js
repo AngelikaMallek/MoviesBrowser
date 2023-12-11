@@ -1,6 +1,6 @@
 import { Container, Image, Paragraph, Character } from "./styled";
 import { imageURL } from "../API/APIData";
-import noPhoto from "../Placeholders/noPhoto.svg"
+import noPhoto from "../../images/noPhoto.svg";
 
 const PersonTile = ({ id, name, poster, character }) => (
     <Container to={`/people/${id}`}>

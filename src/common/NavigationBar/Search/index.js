@@ -1,5 +1,5 @@
 import { StyledSearch, Input } from "./styled";
-import { ReactComponent as Magnifier } from "./magnifier.svg";
+import { ReactComponent as Magnifier } from "../../../images/magnifier.svg";
 
 const Search = () => (
     <StyledSearch>

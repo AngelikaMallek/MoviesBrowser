@@ -1,5 +1,5 @@
 import { Wrapper, Paragraph, Description, Button } from "./styled";
-import { ReactComponent as Icon } from './icon.svg';
+import { ReactComponent as Icon } from '../../images/icon.svg';
 
 const Error = () => (
     <Wrapper>

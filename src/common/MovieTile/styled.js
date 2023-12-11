@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as Star } from "./star.svg";
+import { ReactComponent as Star } from "../../images/star.svg";
 
 export const Container = styled(Link)`
     border-radius: 5px;

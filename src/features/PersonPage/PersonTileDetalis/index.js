@@ -10,7 +10,7 @@ import {
 } from "./styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
-import noPhoto from "../../../common/Placeholders/noPhoto.svg";
+import noPhoto from "../../../images/noPhoto.svg";
 const PersonTileDetalis = ({ poster, name, birthDate, birthPlace, description }) => {
 
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1140);

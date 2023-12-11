@@ -16,8 +16,8 @@ import {
 } from "./styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
-import { ReactComponent as Star } from "./star.svg";
-import noPoster from "../../../common/Placeholders/noPoster.svg";
+import { ReactComponent as Star } from "../../../images/star.svg";
+import noPoster from "../../../images/noPoster.svg";
 
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");

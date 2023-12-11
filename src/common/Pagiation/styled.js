@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as Arrow } from "./arrow.svg";
+import { ReactComponent as Arrow } from "../../images/arrow.svg";
 
 export const Wrapper = styled.div`
     display: flex;

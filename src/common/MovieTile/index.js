@@ -1,6 +1,6 @@
 import { Container, Image, Title, Year, GenresBar, Genres,Wrapper, Rates, Votes, WrapperDetalist, StarStyle } from "./styled";
 import { imageURL } from "../API/APIData";
-import noPoster from "../Placeholders/noPoster.svg";
+import noPoster from "../../images/noPoster.svg";
 
 const MovieTile = ({id, title, date, vote, poster, voteCount, genres}) => (
     <Container to={`/movies/${id}`}>
