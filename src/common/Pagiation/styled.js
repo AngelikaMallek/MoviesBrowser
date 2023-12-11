@@ -29,6 +29,7 @@ export const Button = styled.a`
     gap: 8px;
     border-radius: 5px;
     background: ${({ theme }) => theme.color.pattensBlue};
+    cursor: pointer;
 `;
 
 export const Page = styled.p`
