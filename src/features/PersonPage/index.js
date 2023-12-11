@@ -35,6 +35,7 @@ const PersonPage = () => {
             <Container>
                 <PersonTileDetalis
                     key={popularPerson.id}
+                    id={popularPerson.id}
                     poster={popularPerson.profile_path}
                     name={popularPerson.name}
                     birthDate={popularPerson.birthday}
@@ -46,6 +47,7 @@ const PersonPage = () => {
                     {casts.map((cast) => (
                         <MovieTile
                             key={cast.id}
+                            id={cast.id}
                             title={cast.title}
                             date={cast.release_date}
                             vote={cast.vote_average}
@@ -63,6 +65,7 @@ const PersonPage = () => {
                     {crews.map((crew) => (
                         <MovieTile
                             key={crew.id}
+                            id={crew.id}
                             title={crew.title}
                             date={crew.release_date}
                             vote={crew.vote_average}

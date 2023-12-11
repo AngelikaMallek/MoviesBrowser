@@ -17,6 +17,8 @@ import {
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
 import { ReactComponent as Star } from "./star.svg";
+import { NoPoster } from "../../../common/Placeholders";
+import noPoster from "../../../common/Placeholders/noPoster.svg";
 
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
@@ -38,7 +40,10 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
 
     return (
         <Container>
-            <Poster src={imageURL + "w342" + poster} alt="Poster" />
+            {poster
+                ? <Poster src={imageURL + "w342" + poster} alt="Poster" />
+                : <NoPoster src={noPoster} alt="Poster"/>
+            }
             <MovieDataContainer>
                 <Title>{title ? title : "Unknown title"}</Title>
                 <Year>{year ? (new Date(year).getFullYear()) : ""}</Year>

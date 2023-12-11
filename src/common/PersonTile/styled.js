@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import noPhoto from "./noPhoto.svg";
-
 export const Container = styled(Link)`
     text-decoration: none;
     display: flex;
@@ -40,21 +38,6 @@ export const Image = styled.img`
         max-height: 178px;
     }
 `;
-
-export const NoPhoto = styled.div`
-    width: 177px;
-    height: 264px;
-    background-color: ${({ theme }) => theme.color.silver};
-    background-image: url("${noPhoto}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100px;
-
-    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
-        font-size: 120px;
-    }
-`;
-
 export const PeopleGrid = styled.div`
     display: grid;
     gap: 24px;

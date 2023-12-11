@@ -10,6 +10,8 @@ import {
 } from "./styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
+import { NoPhoto } from "../../../common/Placeholders";
+import noPhoto from "../../../common/Placeholders/noPhoto.svg";
 const PersonTileDetalis = ({ poster, name, birthDate, birthPlace, description }) => {
 
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1140);
@@ -28,7 +30,10 @@ const PersonTileDetalis = ({ poster, name, birthDate, birthPlace, description })
 
     return (
         <PersonTileContainer>
-            <Image src={imageURL + "w500" + poster} alt="Famous person" />
+            {poster
+                ? <Image src={imageURL + "w500" + poster} alt="Famous person" />
+                : <NoPhoto src={noPhoto} alt="Famous person"/>
+            }
             <PersonDataContainer>
                 <Name>{name ? name : "Unknown name"}</Name>
                 <BirthDate>

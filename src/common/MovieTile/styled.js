@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import noPoster from "./noPoster.svg";
 import { ReactComponent as Star } from "./star.svg";
 
 export const Container = styled(Link)`
@@ -34,22 +33,6 @@ export const Image = styled.img`
         max-height: 169px;
     }
 `;
-
-export const NoPoster = styled.div`
-    width: auto;
-    height: 434px;
-    background-color: ${({ theme }) => theme.color.silver};
-    background-image: url("${noPoster}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100px;
-
-    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
-        height: 169px;
-        width: auto;
-    }
-`;
-
 export const Title = styled.h2`
     color: ${({ theme }) => theme.color.woodsmoke};
     font-size: 22px;
