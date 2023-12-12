@@ -21,8 +21,8 @@ export const TextWrapper = styled.div`
     align-items: center;
 `;
 
-export const Button = styled.a`
-    text-decoration: none;
+export const Button = styled.button`
+    border: none;
     display: flex;
     padding: 8px 16px;
     align-items: center;
@@ -30,6 +30,12 @@ export const Button = styled.a`
     border-radius: 5px;
     background: ${({ theme }) => theme.color.pattensBlue};
     cursor: pointer;
+
+    &:disabled {
+        background-color: ${({ theme }) => theme.color.mystic};
+        color: ${({ theme }) => theme.color.woodsmoke};
+        cursor: not-allowed;
+    }
 `;
 
 export const Page = styled.p`
@@ -55,6 +61,12 @@ export const ArrowStyled = styled(Arrow)`
         right &&
         css`
             transform: rotate(180deg);
+        `}
+
+    ${({disabled}) => 
+        disabled &&
+        css`
+            color: ${({ theme }) => theme.color.waterloo}
         `}
 `;
 
