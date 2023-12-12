@@ -8,17 +8,29 @@ export const Wrapper = styled.div`
     padding-bottom: 103px;
     padding-top: 40px;
     gap: 24px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        gap: 8px;
+    }
 `;
 
 export const ButtonsWrapper = styled.div`
     display: flex;
     gap: 12px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        gap: 8px;
+    }
 `;
 
 export const TextWrapper = styled.div`
     display: flex;
     gap: 8px;
     align-items: center;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        gap: 2px;
+    }
 `;
 
 export const Button = styled.button`
@@ -36,6 +48,19 @@ export const Button = styled.button`
         color: ${({ theme }) => theme.color.woodsmoke};
         cursor: not-allowed;
     }
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        gap: 4px;
+    }
+`;
+
+export const Paragraph = styled.p`
+    padding: 0;
+    margin: 0;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        display: none;
+    }
 `;
 
 export const Page = styled.p`
@@ -44,6 +69,11 @@ export const Page = styled.p`
     line-height: 150%;
     padding: 0;
     margin: 0;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 10px;
+        line-height: 24px;
+    }
 `;
 
 export const Number = styled.p`
@@ -52,10 +82,22 @@ export const Number = styled.p`
     line-height: 150%;
     padding: 0;
     margin: 0;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        font-size: 10px;
+        line-height: 24px;
+    }
 `;
 
 export const ArrowStyled = styled(Arrow)`
     color: ${({ theme }) => theme.color.scienceBlue};
+    width: 7px;
+    height: 11px;
+
+    @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+        width: 5px;
+        height: 8px;
+    }
 
     ${({right}) => 
         right &&
@@ -67,6 +109,16 @@ export const ArrowStyled = styled(Arrow)`
         disabled &&
         css`
             color: ${({ theme }) => theme.color.waterloo}
+        `}
+
+    ${({small}) => 
+        small &&
+        css`
+            display: none;
+
+            @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
+                display: inline;
+            }
         `}
 `;
 
