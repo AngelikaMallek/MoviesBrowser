@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const usePagination = () => {
 	const [page, setPage] = useState(1);
@@ -18,6 +18,6 @@ export const usePagination = () => {
       const setLastPage = () => {
         setPage((page) => (page = 500));
       };
-
+      
 	return { page, pagePrevious, pageNext, setFirstPage, setLastPage };
 };
