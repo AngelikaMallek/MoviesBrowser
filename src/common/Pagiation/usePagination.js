@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-export const usePagination = () => {
-	const [page, setPage] = useState(1);
+export const usePagination = (query) => {
+  const pageFromParam = parseInt(query);
+	const [page, setPage] = useState(pageFromParam || 1);
+  console.log(page);
 
     const pagePrevious = () => {
         setPage((page) => page - 1);

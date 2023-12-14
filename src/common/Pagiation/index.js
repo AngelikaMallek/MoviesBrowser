@@ -1,9 +1,14 @@
 import { ButtonsWrapper, Button, Wrapper, Page, Number, TextWrapper, ArrowStyled, Paragraph } from "./styled";
 import { usePagination } from "./usePagination";
+import { useLocation } from "react-router-dom";
 
 const Pagination = () => {
 
-    const { page, pagePrevious, pageNext, setFirstPage, setLastPage } = usePagination();
+    const location = useLocation()
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get("page");
+
+    const { page, pagePrevious, pageNext, setFirstPage, setLastPage } = usePagination(query);
 
     return (
         <Wrapper>
