@@ -10,13 +10,11 @@ export const useApiMovieList = () => {
     const location = useLocation()
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get("page");
-    console.log(query);
 
     useEffect(() => {
         const fetchApiMovieList = async () => {
             try {
-                const response = await axios.get(popularMoviesURL + `&page=${query}`);
-                console.log(popularMoviesURL + `${query}`);
+                const response = await axios.get(query ? popularMoviesURL + `&page=${query}` : popularMoviesURL);
                 setMovieList(response.data);
                 setLoading(false);
             } catch {
