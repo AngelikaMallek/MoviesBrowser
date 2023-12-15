@@ -1,6 +1,6 @@
 # MoviesBrowser
 
-This is the Movies Browser. You can search your favourite films!
+This is the Movies Browser, my version of our group project. This repository is still under construction. If you want to see the finished project, please visit our joint project: [MoviesBrowser](https://github.com/michal-owsiak/movies-browser)
 
 ## Demo
 
