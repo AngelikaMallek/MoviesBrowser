@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as Arrow } from "../../images/arrow.svg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -33,7 +34,7 @@ export const TextWrapper = styled.div`
     }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     border: none;
     display: flex;
     padding: 8px 16px;
@@ -42,11 +43,13 @@ export const Button = styled.button`
     border-radius: 5px;
     background: ${({ theme }) => theme.color.pattensBlue};
     cursor: pointer;
+    text-decoration: none;
 
     &:disabled {
         background-color: ${({ theme }) => theme.color.mystic};
         color: ${({ theme }) => theme.color.woodsmoke};
         cursor: not-allowed;
+        pointer-events: none;
     }
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {

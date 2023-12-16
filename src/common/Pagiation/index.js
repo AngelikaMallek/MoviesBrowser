@@ -13,12 +13,12 @@ const Pagination = () => {
     return (
         <Wrapper>
             <ButtonsWrapper>
-                <Button onClick={setFirstPage} disabled={page === 1}>
+                <Button onClick={setFirstPage} disabled={page === 1} to={`/movies?page=1`}>
                     <ArrowStyled disabled={page === 1}/>
                     <ArrowStyled small/>
                     <Paragraph>First</Paragraph>
                 </Button>
-                <Button onClick={pagePrevious} disabled={page === 1}>
+                <Button onClick={pagePrevious} disabled={page === 1} to={`/movies?page=${page}`}>
                     <ArrowStyled disabled={page === 1}/>
                     <Paragraph>Previous</Paragraph>
                 </Button>
@@ -30,11 +30,11 @@ const Pagination = () => {
                 <Number>500</Number>
             </TextWrapper>
             <ButtonsWrapper>
-                <Button onClick={pageNext} disabled={page === 500}>
+                <Button onClick={pageNext} disabled={page === 500} to={`/movies?page=${page}`}>
                     <Paragraph>Next</Paragraph>
                     <ArrowStyled right disabled={page === 500}/>
                 </Button>
-                <Button onClick={setLastPage} disabled={page === 500}>
+                <Button onClick={setLastPage} disabled={page === 500} to={`/movies?page=500`}>
                     <Paragraph>Last</Paragraph>
                     <ArrowStyled right disabled={page === 500}/>
                     <ArrowStyled right small/>
