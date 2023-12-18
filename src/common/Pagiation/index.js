@@ -1,25 +1,25 @@
 import { ButtonsWrapper, Button, Wrapper, Page, Number, TextWrapper, ArrowStyled, Paragraph } from "./styled";
 import { usePagination } from "./usePagination";
-import { useLocation } from "react-router-dom";
+
+const LAST_PAGE = 500;
 
 const Pagination = () => {
 
-    const location = useLocation()
-    const searchParams = new URLSearchParams(location.search);
-    const query = searchParams.get("page");
+    const page = usePagination();
 
-    const { page, pagePrevious, pageNext, setFirstPage, setLastPage } = usePagination(query);
+    const isFirstPage = page === 1;
+	const isLastPage = page === LAST_PAGE;
 
     return (
         <Wrapper>
             <ButtonsWrapper>
-                <Button onClick={setFirstPage} disabled={page === 1} to={`/movies?page=1`}>
-                    <ArrowStyled disabled={page === 1}/>
+                <Button disabled={isFirstPage} to={`?page=1`}>
+                    <ArrowStyled disabled={isFirstPage}/>
                     <ArrowStyled small/>
                     <Paragraph>First</Paragraph>
                 </Button>
-                <Button onClick={pagePrevious} disabled={page === 1} to={`/movies?page=${page}`}>
-                    <ArrowStyled disabled={page === 1}/>
+                <Button disabled={isFirstPage} to={`?page=${page - 1}`}>
+                    <ArrowStyled disabled={isFirstPage}/>
                     <Paragraph>Previous</Paragraph>
                 </Button>
             </ButtonsWrapper>
@@ -30,13 +30,13 @@ const Pagination = () => {
                 <Number>500</Number>
             </TextWrapper>
             <ButtonsWrapper>
-                <Button onClick={pageNext} disabled={page === 500} to={`/movies?page=${page}`}>
+                <Button disabled={isLastPage} to={`?page=${page + 1}`}>
                     <Paragraph>Next</Paragraph>
-                    <ArrowStyled right disabled={page === 500}/>
+                    <ArrowStyled right disabled={isLastPage}/>
                 </Button>
-                <Button onClick={setLastPage} disabled={page === 500} to={`/movies?page=500`}>
+                <Button disabled={isLastPage} to={`?page=${LAST_PAGE}`}>
                     <Paragraph>Last</Paragraph>
-                    <ArrowStyled right disabled={page === 500}/>
+                    <ArrowStyled right disabled={isLastPage}/>
                     <ArrowStyled right small/>
                 </Button>
             </ButtonsWrapper>

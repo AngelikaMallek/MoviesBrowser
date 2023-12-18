@@ -1,20 +1,19 @@
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { popularMoviesURL } from "../../common/API/APIData";
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import { usePagination } from '../../common/Pagiation/usePagination';
 
 export const useApiMovieList = () => {
     const [movieList, setMovieList] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const location = useLocation()
-    const searchParams = new URLSearchParams(location.search);
-    const query = searchParams.get("page");
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
+	
+	const page = usePagination();
 
     useEffect(() => {
         const fetchApiMovieList = async () => {
             try {
-                const response = await axios.get(query ? popularMoviesURL + `&page=${query}` : popularMoviesURL);
+                const response = await axios.get(page ? popularMoviesURL + `&page=${page}` : popularMoviesURL);
                 setMovieList(response.data);
                 setLoading(false);
             } catch {
@@ -23,8 +22,9 @@ export const useApiMovieList = () => {
             }
         }
 
+        setLoading(true);
         setTimeout(fetchApiMovieList, 2000);
-    },[query]);
+    },[page]);
 
     return {movieList, loading, error};
 }

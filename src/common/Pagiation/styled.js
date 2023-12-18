@@ -45,12 +45,18 @@ export const Button = styled(Link)`
     cursor: pointer;
     text-decoration: none;
 
-    &:disabled {
-        background-color: ${({ theme }) => theme.color.mystic};
-        color: ${({ theme }) => theme.color.woodsmoke};
-        cursor: not-allowed;
-        pointer-events: none;
+    &:active {
+        color: ${({ theme }) => theme.color.black};
     }
+
+    ${({ disabled }) =>
+		disabled &&
+		css`
+			background-color: ${({ theme }) => theme.color.mystic};
+			color: ${({ theme }) => theme.color.woodsmoke};
+			cursor: not-allowed;
+			pointer-events: none;
+		`}
 
     @media(max-width: ${({ theme }) => (theme.breakpoints.mobile)} ) {
         gap: 4px;

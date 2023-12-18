@@ -1,24 +1,11 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-export const usePagination = (query) => {
-  const pageFromParam = parseInt(query);
-	const [page, setPage] = useState(pageFromParam || 1);
+export const usePagination = () => {
+  
+	const location = useLocation();
+	const searchParams = new URLSearchParams(location.search);
+	const queryPage = searchParams.get("page") || 1;
+	const page = parseInt(queryPage);
 
-  const pagePrevious = () => {
-    setPage((page) => page - 1);
-  };
-   
-  const pageNext = () => {
-    setPage((page) => page + 1);
-  };
-    
-  const setFirstPage = () => {
-    setPage((page) => (page = 1));
-  };
-    
-  const setLastPage = () => {
-    setPage((page) => (page = 500));
-  };
-      
-	return { page, pagePrevious, pageNext, setFirstPage, setLastPage };
+	return page;
 };
